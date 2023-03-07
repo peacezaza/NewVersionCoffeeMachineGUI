@@ -1,14 +1,14 @@
 package src;
 
-import src.ButtonListener;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.io.File;
 
 public class MainFrame {
-    JFrame frame = new JFrame("CoffeeMachine");
+    private JFrame frame = new JFrame("CoffeeMachine");
+    private Color color = new Color(226,218,196,255);
     public MainFrame(){
         createJFrame();
         setFirstPage(frame);
@@ -16,6 +16,7 @@ public class MainFrame {
     }
     private void createJFrame(){
         frame.setSize(350,370);
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER,20,20));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.addComponentListener(new ComponentAdapter() {
@@ -42,11 +43,14 @@ public class MainFrame {
     }
 
     private void setFirstPage(JFrame frame){
-        ButtonListener button = new ButtonListener();
+        ButtonStyle button = new ButtonStyle();
+        ImageFiles image = new ImageFiles();
         JPanel panel = new JPanel();
+
         panel.add(button.buyButton());
-        frame.add(panel);
+        frame.add(image.getLatteLabel());
     }
+
 
     public static void main(String[] args){
         new MainFrame();
