@@ -10,8 +10,9 @@ public class MainFrame {
     private JFrame frame = new JFrame("CoffeeMachine");
     private Color color = new Color(226,218,196,255);
     public MainFrame(){
-        createJFrame();
         setFirstPage(frame);
+        createJFrame();
+
 
     }
     private void createJFrame(){
@@ -46,9 +47,9 @@ public class MainFrame {
         ButtonStyle button = new ButtonStyle();
         ImageFiles image = new ImageFiles();
         JPanel panel = new JPanel();
-
         panel.add(button.buyButton());
-        frame.add(image.getLatteLabel());
+        panel.add(image.getLatteLabel());
+        frame.add(panel);
     }
 
 
