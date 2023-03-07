@@ -47,8 +47,12 @@ public class MainFrame {
         ButtonStyle button = new ButtonStyle();
         ImageFiles image = new ImageFiles();
         JPanel panel = new JPanel();
-        panel.add(button.buyButton());
+        JLabel label = new JLabel(image.getTurtle(),JLabel.CENTER);
+        JLabel label1 = new JLabel("TAOJOM");
+        panel.add(label1);
         panel.add(image.getLatteLabel());
+        panel.add(image.getCapuccino());
+        panel.add(image.getEspresso());
         frame.add(panel);
     }
 
